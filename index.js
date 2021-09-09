@@ -17,6 +17,8 @@ const rentals = require("./routes/rentals");
 const users = require("./routes/users");
 const customer_movies = require("./routes/customer_movies");
 const auth = require("./routes/auth");
+const helmet = require("helmet");
+const compression = require("compression");
 
 // winston.add(new winston.transports.File(), { filename: "logfile.log" });
 winston.add(
@@ -48,7 +50,9 @@ app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/customer_movies", customer_movies);
 app.use(error);
-require("./startup/prod");
+app.use(helmet());
+app.use(compression());
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`listening on port ${port}...`));
