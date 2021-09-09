@@ -24,7 +24,9 @@ winston.add(
 );
 
 winston.add(
-  new winston.transports.MongoDB({ db: "mongodb://localhost/vidly" })
+  new winston.transports.MongoDB({
+    db: "mongodb+srv://omg9800:jagat.786@cluster0.ak8qt.mongodb.net/vidly",
+  })
 );
 
 if (!config.get("jwtPrivateKey")) {
