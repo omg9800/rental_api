@@ -20,24 +20,29 @@ const auth = require("./routes/auth");
 const helmet = require("helmet");
 const compression = require("compression");
 
-// winston.add(new winston.transports.File(), { filename: "logfile.log" });
-winston.add(
-  new winston.transports.File({ filename: "logfile.log", level: "error" })
-);
+//winston.add(new winston.transports.File(), { filename: "logfile.log" });
+// winston.add(
+//   new winston.transports.File({ filename: "logfile.log", level: "error" })
+// );
 
-winston.add(
-  new winston.transports.MongoDB({
-    db: "mongodb+srv://omg9800:jagat.786@cluster0.ak8qt.mongodb.net/vidly",
-  })
-);
+// winston.add(
+//   new winston.transports.MongoDB({
+//     //db: "mongodb://localhost:/vidly",
+//     db: "mongodb+srv://omg9800:omg9800@vidly.yfmpt.mongodb.net/vidly?retryWrites=true&w=majority",
+//   })
+// );
 
 if (!config.get("jwtPrivateKey")) {
   console.error("Fatal Error: jwtPrivateKey is not defined");
   process.exit(1);
 }
-
+// .connect("mongodb+srv://omg9800:jagat.786@cluster0.ak8qt.mongodb.net/vidly")
+// .connect("mongodb://localhost:/vidly")
+// .connect("mongodb://localhost:/vidly")
 mongoose
-  .connect("mongodb+srv://omg9800:jagat.786@cluster0.ak8qt.mongodb.net/vidly")
+  .connect(
+    "mongodb+srv://omg9800:omg9800@vidly.yfmpt.mongodb.net/vidly?retryWrites=true&w=majority"
+  )
   .then(() => console.log("Connected to mongodb..."))
   .catch((err) => console.log("Could not connect to mongodb"));
 
