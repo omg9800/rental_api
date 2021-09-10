@@ -7,9 +7,10 @@ const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const express = require("express");
+
+const app = express();
 var cors = require("cors");
 app.use(cors());
-const app = express();
 
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
