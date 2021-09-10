@@ -8,8 +8,9 @@ Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const express = require("express");
 var cors = require("cors");
-const app = express();
 app.use(cors());
+const app = express();
+
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
 const movies = require("./routes/movies");
