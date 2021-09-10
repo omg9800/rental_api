@@ -62,4 +62,8 @@ app.use(compression());
 
 const port = process.env.PORT || 3000;
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("vidly/build"));
+}
+
 app.listen(port, () => console.log(`listening on port ${port}...`));
