@@ -28,7 +28,7 @@ winston.add(
 winston.add(
   new winston.transports.MongoDB({
     //db: "mongodb://localhost:/vidly",
-    db: "mongodb://omg:omg@cluster0-shard-00-00.yfmpt.mongodb.net:27017,cluster0-shard-00-01.yfmpt.mongodb.net:27017,cluster0-shard-00-02.yfmpt.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-3l3xds-shard-0&authSource=admin&retryWrites=true&w=majority",
+    db: "mongodb://omg:omg@cluster0-shard-00-00.yfmpt.mongodb.net:27017,cluster0-shard-00-01.yfmpt.mongodb.net:27017,cluster0-shard-00-02.yfmpt.mongodb.net:27017/vidly?ssl=true&replicaSet=atlas-3l3xds-shard-0&authSource=admin&retryWrites=true&w=majority",
   })
 );
 
@@ -41,7 +41,7 @@ if (!config.get("jwtPrivateKey")) {
 // .connect("mongodb://localhost:/vidly")
 mongoose
   .connect(
-    "mongodb://omg:omg@cluster0-shard-00-00.yfmpt.mongodb.net:27017,cluster0-shard-00-01.yfmpt.mongodb.net:27017,cluster0-shard-00-02.yfmpt.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-3l3xds-shard-0&authSource=admin&retryWrites=true&w=majority"
+    "mongodb://omg:omg@cluster0-shard-00-00.yfmpt.mongodb.net:27017,cluster0-shard-00-01.yfmpt.mongodb.net:27017,cluster0-shard-00-02.yfmpt.mongodb.net:27017/vidly?ssl=true&replicaSet=atlas-3l3xds-shard-0&authSource=admin&retryWrites=true&w=majority"
   )
   .then(() => console.log("Connected to mongodb..."))
   .catch((err) => console.log("Could not connect to mongodb"));
